@@ -50,7 +50,7 @@ class ShoppingCart:
         discount = self.DISCOUNT_CODES[code]
         subtotal = self._subtotal()
 
-        if subtotal > discount["min_order"]:
+        if subtotal >= discount["min_order"]:
             self._discount = discount
         else:
             raise ValueError(
